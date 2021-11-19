@@ -1,13 +1,10 @@
+from random import randint
 #set variables
 playerLetter = 'x'
 computerLetter = 'o'
 
 board = [' ' for i in range(10)]
-def who_plays_first():
-    if random.randint(0, 1) == 0:
-        return playerLetter
-        else:
-            computerLetter
+
 #print the board
 def print_board():
     print('***************')
@@ -16,7 +13,7 @@ def print_board():
     print(board[4] + '|' + board[5] + '|' + board[6])
     print('---------')
     print(board[7] + '|' + board[8] + '|' + board[9])
-print_board()
+
 
 # checking if the board is full 
 def is_full():
@@ -28,20 +25,26 @@ def check_winner(board, letter):
            (board[4] == board[5] == board[6] == letter) or \
            (board[7] == board[8] == board[9] == letter) or \
            (board[1] == board[4] == board[7] == letter) or \
-            (board[2] == board[5] == board[8] == letter) or \
-            (board[3] == board[6] == board[9] == letter) or \
-            (board[1] == board[5] == board[9] == letter) or \
-            (board[3] == board[5] == board[7] == letter)
+           (board[2] == board[5] == board[8] == letter) or \
+           (board[3] == board[6] == board[9] == letter) or \
+           (board[1] == board[5] == board[9] == letter) or \
+           (board[3] == board[5] == board[7] == letter)
             
         
         # check free space
-       def is_space(board, position):
-       return board[position] == ' '    
+       def is_free(board, position):
+           return board[position] == ' '    
 
      # place marker on the board 
      def place_marker(board, mark, position):
-     board[position] = mark
+          board[position] = mark
 
+          #who plays first
+          def who_plays_first():
+              if random.randint(0,1) == 0:
+                return playerLetter
+                else:
+                    return computerLetter
      #player turn 
      def player_turn():
          position = int(input('choose a position: '))
@@ -55,8 +58,9 @@ def check_winner(board, letter):
                          if position < 1 or position > 9:
                              print('please choose a number between 1 to 9')
                              player_turn()
-
-                def duplicate_board(board):
+                             
+                    #create a copy of the board
+                    def duplicate_board(board):
                     duplicate_board = []
                     for i in board:
                         duplicate_board.append(i)
@@ -70,6 +74,7 @@ def check_winner(board, letter):
                         place_marker(copy, computerLetter, i)
                         if check_winner(copy, computerLetter):
                             place_marker(board, computerLetter, i)
+                            return
                             else:
                                 continue
                     #check if player wins
@@ -77,7 +82,8 @@ def check_winner(board, letter):
                     if is_free(copy, i):
                         place_marker(copy, playerLetter, i)
                         if check_winner(copy, playerLetter):
-                            place_marker(board, playerLetter, i)
+                            place_marker(board, computerLetter, i)
+                            return
                             else:
                                 continue
                      #run the game
