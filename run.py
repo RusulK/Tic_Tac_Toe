@@ -3,7 +3,7 @@ from random import randint
 playerLetter = 'x'
 computerLetter = 'o'
 
-board = [' ' for i in range(1, 10)]
+board = [' ' for i in range(9)]
 # testing
 # board[0] = playerLetter
 # board[4] = playerLetter
@@ -25,7 +25,7 @@ def print_board():
 
 # checking if the board is full 
 def is_full():
-    return ' ' not in board[1:10]
+    return ' ' not in board[:9]
 
 
 # check winner
@@ -44,20 +44,24 @@ def check_winner(board, letter):
 # print(check_winner(board, computerLetter))
 
 
-#     # check free space
-# def is_free(board, position):
-#     return board[position] == ' '    
+# check free space
+def is_free(board, position):
+    return board[position] == ' '
 
-#      # place marker on the board 
-# def place_marker(board, mark, position):
-#           board[position] = mark
 
-#           #who plays first
-#           def who_plays_first():
-#               if random.randint(0,1) == 0:
-#                 return playerLetter
-#               else:
-#                return computerLetter
+# place marker on the board 
+ #def place_marker(board, mark, position):
+    #board[position] = mark
+#print(place_marker(board, mark, position))
+
+
+# who plays first
+#def who_plays_first():
+ #   if random.randint(0,1) == 0:
+#        return playerLetter
+#    else:
+#            return computerLetter
+ #print(who_plays_first())
 #      #player turn 
 # def player_turn():
 #     position = int(input('choose a position: '))
@@ -133,11 +137,3 @@ def check_winner(board, letter):
 # else:
 # turn = playerLetter
 # main()
-
-
-
-
-
-
-
-
