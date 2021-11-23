@@ -50,18 +50,19 @@ def is_free(board, position):
 
 
 # place marker on the board 
- #def place_marker(board, mark, position):
-    #board[position] = mark
-#print(place_marker(board, mark, position))
-
+def place_marker(board, mark, position):
+    board[position] = mark
 
 # who plays first
-#def who_plays_first():
- #   if random.randint(0,1) == 0:
-#        return playerLetter
-#    else:
-#            return computerLetter
- #print(who_plays_first())
+def who_plays_first():
+    if random.randint(0, 8) == 0:
+        return playerLetter
+    else:
+        return computerLetter
+board[0] =  'x'  
+(who_plays_first)
+print_board()
+
 #      #player turn 
 # def player_turn():
 #     position = int(input('choose a position: '))
