@@ -64,20 +64,15 @@ print(who_plays_first())
 print_board()
 
 # player turn 
-#def player_turn():
-    #position = int(input('choose a position: '))
-#try:
-    #if is_free(board, position):
-        #place_marker(board, playerLetter, position)
-    #else:
-        #print('This position is not free')            
-        #player_turn()
-    #except:
-        #if position < 0 or position > 8:
-        #print('please choose a number between 1 to 9'
+def player_turn():
+    position = input('please choose a number between 0 - 8: ')
+    position = int(position) 
+    board[position] = 'x'
+print(player_turn())
+print_board()
+    
 
-
-#     #create a copy of the board
+#create a copy of the board
 # def duplicate_board(board):
 #     duplicate_board = []
 #     for i in board:
