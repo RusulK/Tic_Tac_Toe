@@ -1,4 +1,4 @@
-from random import randint
+from random import randint 
 # set variables
 playerLetter = 'x'
 computerLetter = 'o'
@@ -55,30 +55,28 @@ def place_marker(board, mark, position):
 
 # who plays first
 def who_plays_first():
-    if random.randint(0, 8) == 0:
+    if randint(0, 1) == 0:
         return playerLetter
     else:
         return computerLetter
-board[0] =  'x'  
-(who_plays_first)
+
+print(who_plays_first())
 print_board()
 
-#      #player turn 
-# def player_turn():
-#     position = int(input('choose a position: '))
-#     try:
-#         if is_free(board, position):
-#             place_marker(board, playerLetter, position)
-#         else:
-#             print('This position is not free')
-#             player_turn()
-#     except:
-#         if position < 1 or position > 9:
-#             print('please choose a number between 1 to 9'
+# player turn 
+#def player_turn():
+    #position = int(input('choose a position: '))
+#try:
+    #if is_free(board, position):
+        #place_marker(board, playerLetter, position)
+    #else:
+        #print('This position is not free')            
+        #player_turn()
+    #except:
+        #if position < 0 or position > 8:
+        #print('please choose a number between 1 to 9'
 
 
-
-                             
 #     #create a copy of the board
 # def duplicate_board(board):
 #     duplicate_board = []
