@@ -71,17 +71,39 @@ def player_turn():
 print(player_turn())
 print_board()
     
-
+    
 #create a copy of the board
-# def duplicate_board(board):
-#     duplicate_board = []
-#     for i in board:
-#         duplicate_board.append(i)
-#     return duplicate_board
-#     #computer turn
-# def computer_turn():
-#     #check if computer wins
-#     for i in range(1,10):
+#def duplicate_board(board):
+#duplicate_board = []
+#for i in board:
+#duplicate_board.append(i):
+#return duplicate_board
+
+
+#computer turn
+def computer_turn():
+    position = randint(0, 8)
+    if is_free(position):
+        place_marker(computerLetter, position)
+    else:
+        computer_turn()
+        print_board()
+
+
+# switch player and computer
+current_player = who_plays_first()
+def switch_player():
+    global current_player
+    if current_player == playerLetter:
+        current_player = computerLetter
+    else:
+        current_player = playerLetter
+        print(switch_player())
+        print_board()
+
+
+# check if computer wins
+# for i in range(1,10):
 #         copy = duplicate_board(board)
 #         if is_free(copy, i):
 #             place_marker(copy, computerLetter, i)
