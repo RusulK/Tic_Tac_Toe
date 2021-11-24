@@ -1,4 +1,4 @@
-from random import randint 
+from random import randint
 # set variables
 playerLetter = 'x'
 computerLetter = 'o'
