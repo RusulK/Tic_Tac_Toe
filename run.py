@@ -3,32 +3,25 @@ import intro
 
 intro.tic_tac_toe()
 # set variables
-playerLetter = 'x'
-computerLetter = 'o'
+playerLetter = '  x  '
+computerLetter = '  o  '
 
-board = [' ' for i in range(9)]
-# testing
-# board[0] = playerLetter
-# board[4] = playerLetter
-# board[8] = playerLetter
-# board[0] = computerLetter
-# board[1] = computerLetter
-# board[2] = computerLetter
+board = ['     ' for i in range(9)]
 
 
 # print the board
 def print_board():
-    print('***************')
+    print('*' * 17)
     print(board[0] + '|' + board[1] + '|' + board[2])
-    print('---------')
+    print('-' * 17)
     print(board[3] + '|' + board[4] + '|' + board[5])
-    print('---------')
+    print('-' * 17)
     print(board[6] + '|' + board[7] + '|' + board[8])
 
 
 # checking if the board is full
 def is_full():
-    return ' ' not in board[:9]
+    return '     ' not in board[:9]
 
 
 # check winner
@@ -45,7 +38,7 @@ def check_winner(board, letter):
 
 # check free space
 def is_free(board, position):
-    return board[position] == ' '
+    return board[position] == '     '
 
 
 # place marker on the board
@@ -104,7 +97,7 @@ def current_player_turn():
 
 # run the game
 def main():
-    print('Welcome to Tac Tic Toe :)')
+    print('Welcome to Tic Tac Toe (❁´◡`❁)')
     while True:
         print_board()
         switch_player()
