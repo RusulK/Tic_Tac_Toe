@@ -1,4 +1,7 @@
 from random import randint
+import intro
+
+intro.tic_tac_toe()
 # set variables
 playerLetter = 'x'
 computerLetter = 'o'
@@ -38,10 +41,6 @@ def check_winner(board, letter):
            (board[2] == board[5] == board[8] == letter) or \
            (board[0] == board[4] == board[8] == letter) or \
            (board[2] == board[4] == board[6] == letter)
-# testing
-# print_board()
-# print(check_winner(board, playerLetter))
-# print(check_winner(board, computerLetter))
 
 
 # check free space
@@ -49,7 +48,7 @@ def is_free(board, position):
     return board[position] == ' '
 
 
-# place marker on the board 
+# place marker on the board
 def place_marker(board, mark, position):
     board[position] = mark
 
@@ -64,7 +63,7 @@ def who_plays_first():
 # print_board()
 
 
-# player turn 
+# player turn
 def player_turn():
     position = int(input('please choose a number between 0 - 8: '))
     if is_free(board, position):
@@ -72,8 +71,8 @@ def player_turn():
     else:
         print('This position is not free')
         player_turn()
-       
-    
+
+
 # computer turn
 def computer_turn():
     position = randint(0, 8)
@@ -81,7 +80,7 @@ def computer_turn():
         place_marker(board, computerLetter, position)
     else:
         computer_turn()
-        
+
 
 # switch player and computer
 current_player = who_plays_first()
@@ -93,7 +92,7 @@ def switch_player():
         current_player = computerLetter
     else:
         current_player = playerLetter
-       
+
 
 # Current Player
 def current_player_turn():
