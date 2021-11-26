@@ -58,12 +58,18 @@ def who_plays_first():
 
 # player turn
 def player_turn():
-    position = int(input('please choose a number between 0 - 8: '))
-    if is_free(board, position):
-        place_marker(board, playerLetter, position)
-    else:
-        print('This position is not free')
-        player_turn()
+    position = int(input('please choose a position: '))
+    try:
+        if is_free(board, position):
+            place_marker(board, playerLetter, position)
+        else:
+            print('This position is not free')
+            player_turn()
+    except:
+        if position < 1 or position > 8:
+            print('Please choose a number between 1 - 8: ')
+        else:
+            player_turn()
 
 
 # computer turn
@@ -93,7 +99,7 @@ def current_player_turn():
         player_turn()
     else:
         computer_turn()
-        
+
 
 # run the game
 def main():
