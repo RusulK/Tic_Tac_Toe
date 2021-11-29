@@ -54,6 +54,11 @@ The game been tested manually on PEP8 and confirmed , there is no problem.
 * Link Heroku app to repositry.
 * click Deploy.
 
+# Future Enhancment
+* Asking the player if wants to continue playing or not.
+* players Scores.
+* Difficulty Levels.
+
 # Credit 
 * Code institute for the deployment terminal.
 * Youtube tutorials.
