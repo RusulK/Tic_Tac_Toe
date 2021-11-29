@@ -78,8 +78,6 @@ def player_turn():
         print(e)
         player_turn()
 
-        
-
 
 # computer turn
 def computer_turn():
