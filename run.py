@@ -111,6 +111,13 @@ def current_player_turn():
 # run the game
 def main():
     print('Welcome to Tic Tac Toe (❁´◡`❁)')
+    play = input("Do you want to play? ")
+    if play == "yes":
+        print("cool..let's play :)")
+    else:
+        print('sorry to see you go :(')
+        quit()
+
     while True:
         print_board()
         switch_player()
