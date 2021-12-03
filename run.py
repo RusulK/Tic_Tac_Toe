@@ -112,7 +112,7 @@ def current_player_turn():
 def main():
     print('Welcome to Tic Tac Toe (❁´◡`❁)')
     play = input("Do you want to play? ")
-    if play == "yes":
+    if play.lower() == "yes":
         print("cool..let's play :)")
     else:
         print('sorry to see you go :(')
@@ -125,10 +125,16 @@ def main():
         if check_winner(board, current_player):
             print_board()
             print(current_player + 'won')
+            playing = input('do you want to keep playing? ')
+        if playing.lower() != "yes":
             break
+        else:
+            print_board()
         if is_full():
             print_board()
             print('Draw!')
+            playing = input('do you want to keep playing? ')
+        if playing.lower() != "yes":
             break
 
 
