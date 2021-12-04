@@ -10,7 +10,7 @@ board = ['     ' for i in range(9)]
 
 
 # print the board
-def print_board():
+def print_board(board):
     print('*' * 17)
     print(board[0] + '|' + board[1] + '|' + board[2])
     print('-' * 17)
@@ -20,7 +20,7 @@ def print_board():
 
 
 # checking if the board is full
-def is_full():
+def is_full(board):
     return '     ' not in board[:9]
 
 
@@ -58,7 +58,7 @@ def who_plays_first():
 
 # player turn
 def player_turn():
-    position_input = input('please choose a position: ')
+    position_input = input('please choose a position(0-8): ')
     try:
         if position_input.isnumeric():
             position = int(position_input)
@@ -73,19 +73,19 @@ def player_turn():
             place_marker(board, playerLetter, position)
         else:
             print('This position is not free')
-            player_turn()
+            player_turn(board)
     except ValueError as e:
-        print(e)
-        player_turn()
+            print(e)
+            player_turn()
 
 
 # computer turn
-def computer_turn():
+def computer_turn(board):
     position = randint(0, 8)
     if is_free(board, position):
         place_marker(board, computerLetter, position)
     else:
-        computer_turn()
+        computer_turn(board)
 
 
 # switch player and computer
@@ -101,15 +101,16 @@ def switch_player():
 
 
 # Current Player
-def current_player_turn():
+def current_player_turn(board):
     if current_player == playerLetter:
-        player_turn()
+        player_turn(board)
     else:
-        computer_turn()
+        computer_turn(board)
 
 
 # run the game
 def main():
+    board = ['     ' for i in range(9)]
     print('Welcome to Tic Tac Toe (❁´◡`❁)')
     play = input("Do you want to play? ")
     if play.lower() == "yes":
@@ -118,24 +119,31 @@ def main():
         print('sorry to see you go :(')
         quit()
 
-    while True:
-        print_board()
+    replay = True
+    while replay:
+        print_board(board)
         switch_player()
-        current_player_turn()
+        current_player_turn(board)
         if check_winner(board, current_player):
-            print_board()
+            print_board(board)
             print(current_player + 'won')
-            playing = input('do you want to keep playing? ')
-        if playing.lower() != "yes":
-            break
-        else:
-            print_board()
-        if is_full():
-            print_board()
+            play = input('do you want to play again? ')
+            if play.lower() == 'yes':
+                print("cool... let's play again")
+                board = ['     ' for i in range(9)]
+            else:
+                replay = False
+                print('sorry to see you go :(')
+        if is_full(board):
+            print_board(board)
             print('Draw!')
-            playing = input('do you want to keep playing? ')
-        if playing.lower() != "yes":
-            break
+            play = input('do you want to play again? ')
+            if play.lower() == 'yes':
+                print("cool... let's play again")
+                board = ['     ' for i in range(9)]
+            else:
+                replay = False
+                print('sorry to see you go :(')
 
 
 main()
