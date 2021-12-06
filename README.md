@@ -58,7 +58,6 @@ The game been tested manually on PEP8 and confirmed , there is no problem.
 * click Deploy.
 
 # Future Enhancement
-* Asking the player if wants to continue playing or not.
 * players Scores.
 * Difficulty Levels.
 
@@ -68,8 +67,8 @@ The game been tested manually on PEP8 and confirmed , there is no problem.
 * [W3Schools](https://www.w3schools.com/) web used to read bout functions.
 
 # Aknowledge
-## I would like to Thank thw following :
-* Code Institute Team.
+## I would like to Thank the following :
+* Code Institute Team, and my Mentor Antonio Rodriguez.
 * Dave Horrocks helps me to understand Python better and was supporting me in my project by giving the right steps and advises.
 
 
