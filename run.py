@@ -6,8 +6,6 @@ intro.tic_tac_toe()
 playerLetter = '  x  '
 computerLetter = '  o  '
 
-board = ['     ' for i in range(9)]
-
 
 # print the board
 def print_board(board):
@@ -57,7 +55,7 @@ def who_plays_first():
 
 
 # player turn
-def player_turn():
+def player_turn(board):
     position_input = input('please choose a position(0-8): ')
     try:
         if position_input.isnumeric():
@@ -75,8 +73,8 @@ def player_turn():
             print('This position is not free')
             player_turn(board)
     except ValueError as e:
-            print(e)
-            player_turn()
+        print(e)
+        player_turn()
 
 
 # computer turn
