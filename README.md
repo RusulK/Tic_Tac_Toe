@@ -13,6 +13,9 @@ Tic Tac Toe planned to be fun game for a short time, suitable for everyone.
 * as a user I would like to be notified if I put a numer that is not how the game asked or put a symble that is not a number.
 * as user I want to have fun and positive experience.
 # Game Features
+* Game Instruction, as is the very important to run any game to have a clear instructions for the palyer.
+![Game-instruction](./readme-content/imags/game-instruction.png)
+
 * Board orgnised places as the player will choose the position.
 
 ![Game-board](./readme-content/imags/game-board.png)
