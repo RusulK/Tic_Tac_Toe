@@ -74,7 +74,7 @@ def player_turn(board):
             player_turn(board)
     except ValueError as e:
         print(e)
-        player_turn()
+        player_turn(board)
 
 
 # computer turn
