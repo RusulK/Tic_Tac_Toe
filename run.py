@@ -113,9 +113,12 @@ def main():
     play = input("Do you want to play? (yes/no) ")
     if play.lower() == "yes":
         print("cool..let's play :)")
-    else:
+    elif play.lower() == "no":
         print('sorry to see you go :(')
         quit()
+    else:
+        print('please choose yes/no to start or quit the game')
+        main()
 
     replay = True
     while replay:
