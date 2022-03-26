@@ -47,7 +47,7 @@ The game been tested manually on PEP8 and confirmed , there is no problem.
 
 # Bugs
 * When I was writing the code I was getting problems with spacing. I fixed that by reading about spaces between python lines and slacks colleagues .
-
+* There was a break in function when the user gives an empty input, this been fixed by adding if,elif and else.
 # Remaining Bugs
 * No Bugs Remained.
 
